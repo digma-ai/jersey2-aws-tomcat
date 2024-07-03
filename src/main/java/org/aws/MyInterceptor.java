@@ -15,9 +15,9 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Optional;
 
-public class MyInterceptorTmp implements ExecutionInterceptor {
+public class MyInterceptor implements ExecutionInterceptor {
 
-    public MyInterceptorTmp() {
+    public MyInterceptor() {
         System.out.println("in MyInterceptor");
     }
 

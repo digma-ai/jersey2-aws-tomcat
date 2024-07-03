@@ -27,14 +27,22 @@ public class AWSResource {
     public String doAws() {
 
         try {
-            SqsProvider.getInstance().sqsCall();
+            SqsProvider sqsProvider = (SqsProvider) Class.forName("org.aws.SqsProvider").getDeclaredConstructor().newInstance();
+
+            sqsProvider.sqsCall();
 
             return "Hello World AWS";
 
-        }catch (Exception e){
+        }
+//        catch (ReflectiveOperationException e){
+//            e.printStackTrace();
+//            return "Hello World AWS Error :" + e;
+//        }
+        catch (Exception e) {
             e.printStackTrace();
-            return "Hello World AWS Error :"+e;
+            return "Hello World AWS Error :" + e;
         }
     }
+
 
 }

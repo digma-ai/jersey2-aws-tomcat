@@ -15,16 +15,21 @@ public class SqsProvider {
 
 	private final SqsAsyncClient sqsClient;
 
-	public static SqsProvider getInstance() {
-		return new SqsProvider();
-	}
+//	public static SqsProvider getInstance() {
+//		return new SqsProvider();
+//	}
 
-	private SqsProvider() {
-		sqsClient = SqsAsyncClient
-			.builder()
-			.httpClient(NettyNioAsyncHttpClient.builder().maxConcurrency(10).build())
-			.region(Region.EU_WEST_1)
-			.build();
+	public SqsProvider() {
+//		try {
+			sqsClient = SqsAsyncClient
+					.builder()
+					.httpClient(NettyNioAsyncHttpClient.builder().maxConcurrency(10).build())
+					.region(Region.EU_WEST_1)
+					.build();
+//		}catch (Throwable e){
+//			e.printStackTrace();
+//			throw e;
+//		}
 	}
 
 	//	private SqsProvider(){
