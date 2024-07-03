@@ -166,25 +166,6 @@
         </dependency>
 
 
-
-
-        <!-- OTEL deps, Enables instrumentation using @WithSpan-->
-        <dependency>
-            <groupId>io.opentelemetry.instrumentation</groupId>
-            <artifactId>opentelemetry-instrumentation-api</artifactId>
-            <version>${otel.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.opentelemetry.instrumentation</groupId>
-            <artifactId>opentelemetry-instrumentation-annotations</artifactId>
-            <version>${otel.version}</version>
-        </dependency>
-
-
-
-
-
     </dependencies>
 
     <build>
