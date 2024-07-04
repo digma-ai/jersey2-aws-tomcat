@@ -13,6 +13,7 @@ package org.glassfish.jersey.examples.helloworld.webapp;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import java.util.Date;
 
 /**
  * @author Pavel Bucek
@@ -23,7 +24,7 @@ public class HelloWorldResource {
     @GET
     @Produces("text/plain")
     public String getHello() {
-        return "Hello World jersey 2!";
+        return "Hello World jersey 2! "+new Date();
     }
 
 }

@@ -15,6 +15,7 @@ import org.aws.SqsProvider;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import java.util.Date;
 
 /**
  * @author Pavel Bucek
@@ -31,7 +32,7 @@ public class AWSResource {
 
             sqsProvider.sqsCall();
 
-            return "Hello World AWS";
+            return "Hello World AWS "+new Date();
 
         }
 //        catch (ReflectiveOperationException e){
