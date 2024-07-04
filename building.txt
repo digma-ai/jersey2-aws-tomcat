@@ -6,10 +6,10 @@ mvn clean package
 deploy target/helloworld-webapp.war on tomcat 9
 
 
-docker build -t tomcat-webapp .
+docker build -t tomcat-webapp-jersey-aws .
 
 
-docker run -p 8088:8080 tomcat-webapp
+docker run -p 8088:8080 tomcat-webapp-jersey-aws
 
 
 access it on
