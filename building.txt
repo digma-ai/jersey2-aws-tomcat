@@ -14,14 +14,14 @@ docker run -p 8088:8080 digmaai/tomcat-webapp-jersey-aws
 
 docker tag digmaai/tomcat-webapp-jersey-aws:latest digmaai/tomcat-webapp-jersey-aws:2.0
 
-
 Push:
 docker push digmaai/tomcat-webapp-jersey-aws:2.0
 try it
 docker run -p 8088:8080 digmaai/tomcat-webapp-jersey-aws:2.0
 
 access it on
-http://localhost:8088/helloworld-webapp/aws
+http://localhost:8088/helloworld-webapp/aws/1
+http://localhost:8088/helloworld-webapp/aws/2
 http://localhost:8088/helloworld-webapp/helloworld
 
 
