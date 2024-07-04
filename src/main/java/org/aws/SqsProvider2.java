@@ -17,13 +17,15 @@ public class SqsProvider2 {
 
     public SqsProvider2() {
 
-        logs();
-
         sqsClient = SqsAsyncClient
                 .builder()
                 .httpClient(NettyNioAsyncHttpClient.builder().maxConcurrency(10).build())
                 .region(Region.EU_WEST_1)
                 .build();
+
+
+        logs();
+
     }
 
     private void logs() {
@@ -36,6 +38,7 @@ public class SqsProvider2 {
                 System.out.println("aws jar does NOT exist "+file.getCanonicalPath());
             }
 
+            System.out.println("MyInterceptor class loader is "+MyInterceptor.class.getClassLoader());
             System.out.println("SqsAsyncClient class loader is "+SqsAsyncClient.class.getClassLoader());
 
         }catch (Throwable e){
