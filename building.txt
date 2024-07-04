@@ -1,0 +1,17 @@
+
+install latest maven
+
+mvn clean package
+
+deploy target/helloworld-webapp.war on tomcat 9
+
+
+docker build -t tomcat-webapp .
+
+
+docker run -p 8088:8080 tomcat-webapp
+
+
+access it on
+http://localhost:8088/helloworld-webapp/aws
+http://localhost:8088/helloworld-webapp/helloworld

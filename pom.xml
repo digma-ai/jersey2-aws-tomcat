@@ -383,6 +383,7 @@
     </dependencies>
 
     <build>
+        <finalName>${artifactId}</finalName>
         <plugins>
             <!-- Run the application using "mvn jetty:run" to deploy to Jetty-->
             <plugin>
