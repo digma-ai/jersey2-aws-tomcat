@@ -86,4 +86,13 @@ public class ProvidersFactory {
         }
     }
 
+    public static void createProviders() throws InterruptedException {
+
+        for (int i = 0; i < 5; i++) {
+            ProvidersFactory.createProvidersOnBackground();
+        }
+
+
+        ProvidersFactory.createProvidersOnCurrentThread();
+    }
 }
