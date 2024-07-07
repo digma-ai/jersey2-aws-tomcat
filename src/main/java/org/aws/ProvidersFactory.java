@@ -33,8 +33,8 @@ public class ProvidersFactory {
 
             providersClasses.forEach(aClass -> threads.add(new Thread(() -> {
                 try {
-                    Thread.currentThread().sleep(20);
-                    System.out.println("creating provider on background "+aClass.getSimpleName());
+                    Thread.currentThread().sleep(30);
+                    System.out.println("creating provider in background "+aClass.getSimpleName());
                     providers.add(aClass.getDeclaredConstructor().newInstance());
                 } catch (Exception e) {
                     e.printStackTrace();
