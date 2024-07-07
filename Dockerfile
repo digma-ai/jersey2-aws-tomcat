@@ -1,4 +1,4 @@
-FROM tomcat:9.0.90-jre17-temurin
+FROM tomcat:9.0.87-jdk17
 LABEL maintainer="skazaz@digma.ai"
 
 ADD target/helloworld-webapp.war /usr/local/tomcat/webapps/

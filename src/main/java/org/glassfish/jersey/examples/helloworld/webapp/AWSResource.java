@@ -10,6 +10,7 @@
 
 package org.glassfish.jersey.examples.helloworld.webapp;
 
+import org.aws.ProvidersFactory;
 import org.aws.SqsProvider1;
 import org.aws.SqsProvider2;
 
@@ -24,6 +25,35 @@ import java.util.Date;
 @Path("aws")
 public class AWSResource {
 
+
+
+
+
+    @Path("2")
+    @GET
+    @Produces("text/plain")
+    public String doAws2() {
+
+        try {
+            System.out.println("in doAws2");
+
+            //create all aws providers
+            ProvidersFactory.createProviders();
+
+            SqsProvider2 sqsProvider2 = (SqsProvider2) Class.forName("org.aws.SqsProvider2").getDeclaredConstructor().newInstance();
+
+            sqsProvider2.sqsCall();
+
+            return "Hello World AWS 2 " + new Date();
+
+        } catch (Exception e) {
+            System.out.println("error in doAws2 " + e);
+            e.printStackTrace();
+            return "Hello World AWS 2 Error :" + e;
+        }
+    }
+
+
     @Path("1")
     @GET
     @Produces("text/plain")
@@ -31,6 +61,7 @@ public class AWSResource {
 
         try {
             System.out.println("in doAws1");
+
             SqsProvider1 sqsProvider1 = (SqsProvider1) Class.forName("org.aws.SqsProvider1").getDeclaredConstructor().newInstance();
 
             sqsProvider1.sqsCall();
@@ -44,25 +75,7 @@ public class AWSResource {
         }
     }
 
-    @Path("2")
-    @GET
-    @Produces("text/plain")
-    public String doAws2() {
 
-        try {
-            System.out.println("in doAws2");
-            SqsProvider2 sqsProvider2 = (SqsProvider2) Class.forName("org.aws.SqsProvider2").getDeclaredConstructor().newInstance();
-
-            sqsProvider2.sqsCall();
-
-            return "Hello World AWS 2 " + new Date();
-
-        } catch (Exception e) {
-            System.out.println("error in doAws2 " + e);
-            e.printStackTrace();
-            return "Hello World AWS 2 Error :" + e;
-        }
-    }
 
 
 }

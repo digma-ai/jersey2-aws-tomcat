@@ -23,28 +23,25 @@ public class SqsProvider2 {
                 .region(Region.EU_WEST_1)
                 .build();
 
-
-        logs();
-
     }
 
-    private void logs() {
-        try {
-
-            File file = new File("/usr/local/tomcat/lib/aws-sdk-java-2.24.13.jar");
-            if (file.exists()){
-                System.out.println("aws jar exist "+file.getCanonicalPath());
-            }else{
-                System.out.println("aws jar does NOT exist "+file.getCanonicalPath());
-            }
-
-            System.out.println("MyInterceptor class loader is "+MyInterceptor.class.getClassLoader());
-            System.out.println("SqsAsyncClient class loader is "+SqsAsyncClient.class.getClassLoader());
-
-        }catch (Throwable e){
-            e.printStackTrace();
-        }
-    }
+//    private void logs() {
+//        try {
+//
+//            File file = new File("/usr/local/tomcat/lib/aws-sdk-java-2.24.13.jar");
+//            if (file.exists()){
+//                System.out.println("aws jar exist "+file.getCanonicalPath());
+//            }else{
+//                System.out.println("aws jar does NOT exist "+file.getCanonicalPath());
+//            }
+//
+//            System.out.println("MyInterceptor class loader is "+MyInterceptor.class.getClassLoader());
+//            System.out.println("SqsAsyncClient class loader is "+SqsAsyncClient.class.getClassLoader());
+//
+//        }catch (Throwable e){
+//            e.printStackTrace();
+//        }
+//    }
 
     public void sqsCall() {
 
