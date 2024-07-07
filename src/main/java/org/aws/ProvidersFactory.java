@@ -2,6 +2,7 @@ package org.aws;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.function.Consumer;
 
 public class ProvidersFactory {
@@ -33,8 +34,10 @@ public class ProvidersFactory {
 
             providersClasses.forEach(aClass -> threads.add(new Thread(() -> {
                 try {
-                    Thread.currentThread().sleep(30);
+                    Thread.currentThread().sleep(new Random().nextInt(100)+1);
                     System.out.println("creating provider in background "+aClass.getSimpleName());
+                    //call it twice for better concurrency simulation
+                    providers.add(aClass.getDeclaredConstructor().newInstance());
                     providers.add(aClass.getDeclaredConstructor().newInstance());
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -47,7 +50,7 @@ public class ProvidersFactory {
 //                thread.join();
             }
 
-//            if (!(providers.size() == providersClasses.size())){
+//            if (!(providers.size() / 2 == providersClasses.size())){
 //                throw new RuntimeException("missing providers");
 //            }
 
