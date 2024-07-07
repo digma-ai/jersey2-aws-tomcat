@@ -23,6 +23,8 @@ public class ProvidersFactory {
         providersClasses.add(KendraProvider2.class);
         providersClasses.add(IotProvider2.class);
         providersClasses.add(Ec2Provider2.class);
+        providersClasses.add(FirehoseProvider2.class);
+        providersClasses.add(DynamoDbProvider.class);
     }
 
     public static void createProvidersOnBackground() throws InterruptedException {
