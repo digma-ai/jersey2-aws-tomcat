@@ -38,7 +38,8 @@ public class AWSResource {
             System.out.println("in doAws2");
 
             //create all aws providers
-            ProvidersFactory.createProviders();
+            ProvidersFactory.createProvidersOnBackground();
+            ProvidersFactory.createProvidersOnCurrentThread();
 
             SqsProvider2 sqsProvider2 = (SqsProvider2) Class.forName("org.aws.SqsProvider2").getDeclaredConstructor().newInstance();
 
