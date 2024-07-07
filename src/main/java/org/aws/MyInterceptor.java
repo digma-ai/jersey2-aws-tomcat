@@ -18,7 +18,7 @@ import java.util.Optional;
 public class MyInterceptor implements ExecutionInterceptor {
 
     public MyInterceptor() {
-        System.out.println("in MyInterceptor");
+        //System.out.println("in MyInterceptor");
     }
 
     @Override
